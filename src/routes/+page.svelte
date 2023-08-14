@@ -22,7 +22,7 @@
 					<path d="M0,0.5 L1,0.5" />
 				</svg>
 			</button>
-			<strong>{currentLevel}</strong>
+			<p>{currentLevel}</p>
 			<button
 				on:click={() => {
 					if (currentLevel < maxLevel) currentLevel += 1;
@@ -46,7 +46,7 @@
 					<path d="M0,0.5 L1,0.5" />
 				</svg>
 			</button>
-			<strong>{targetLevel}</strong>
+			<p>{targetLevel}</p>
 			<button
 				on:click={() => {
 					if (targetLevel < maxLevel) targetLevel += 1;
@@ -59,8 +59,10 @@
 		</div>
 	</div>
 </div>
-<div>必要経験値: {requiredExp.toLocaleString()}</div>
-<div>アメの数: {requiredCandy} 個</div>
+<div class="calc-result">
+	<div>必要経験値: {requiredExp.toLocaleString()}</div>
+	<div>アメの数: {requiredCandy} 個</div>
+</div>
 <div>
 	<h2>注意:</h2>
 	<ul>
@@ -76,9 +78,17 @@
 		justify-content: space-evenly;
 	}
 
+	.input-level h2 {
+		text-align: center;
+	}
+
 	.counter {
 		display: flex;
 		margin: 1rem 0;
+	}
+
+	.counter p {
+		font-weight: bold;
 	}
 
 	.counter button {
@@ -90,7 +100,7 @@
 		border: 0;
 		background-color: transparent;
 		touch-action: manipulation;
-		font-size: 2rem;
+		font-size: 4rem;
 	}
 
 	svg {
@@ -102,5 +112,9 @@
 		vector-effect: non-scaling-stroke;
 		stroke-width: 2px;
 		stroke: #444;
+	}
+
+	.calc-result {
+		padding: 1rem 0;
 	}
 </style>
