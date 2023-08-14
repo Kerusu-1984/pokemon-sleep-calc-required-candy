@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Pokémon Sleep アメ・経験値シミュレータ</title>
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		
+		<link href="./_app/immutable/assets/2.aaf28f69.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.175c4f61.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.e108d1fd.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.fef3654e.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.a7dd00ff.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.7e6319f2.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.66e1bd68.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.22645d99.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <h1 data-svelte-h="svelte-7neoco">Pokémon Sleep アメ・経験値シミュレータ(25レベルまで対応)</h1> <div class="input-level svelte-m7z920"><div><h2 data-svelte-h="svelte-xszvfi">現在のレベル</h2> <div class="counter svelte-m7z920"><button class="svelte-m7z920" data-svelte-h="svelte-110vqke"><svg aria-hidden="true" viewBox="0 0 1 1" class="svelte-m7z920"><path d="M0,0.5 L1,0.5" class="svelte-m7z920"></path></svg></button> <strong>1</strong> <button class="svelte-m7z920" data-svelte-h="svelte-3l4o2y"><svg aria-hidden="true" viewBox="0 0 1 1" class="svelte-m7z920"><path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" class="svelte-m7z920"></path></svg></button></div></div> <div><h2 data-svelte-h="svelte-18ffipv">目標レベル</h2> <div class="counter svelte-m7z920"><button class="svelte-m7z920" data-svelte-h="svelte-18f4iy"><svg aria-hidden="true" viewBox="0 0 1 1" class="svelte-m7z920"><path d="M0,0.5 L1,0.5" class="svelte-m7z920"></path></svg></button> <strong>25</strong> <button class="svelte-m7z920" data-svelte-h="svelte-1jihipi"><svg aria-hidden="true" viewBox="0 0 1 1" class="svelte-m7z920"><path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" class="svelte-m7z920"></path></svg></button></div></div></div> <div>必要経験値: 8,668</div> <div>アメの数: 347 個</div> <div data-svelte-h="svelte-1mp92y6"><h2>注意:</h2> <ul><li>このシミュレータは非公式のものです。</li> <li>性格による獲得経験値補正には対応していません。</li> <li>一部の経験値テーブルが異なるポケモンには対応していません。</li></ul> </div> 
+			
+			<script>
+				{
+					__sveltekit_1ebaw46 = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.175c4f61.js"),
+						import("./_app/immutable/entry/app.a7dd00ff.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
