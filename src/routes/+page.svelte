@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { calcRequiredExp, calcRequiredCandy } from '$lib/index';
 	const minLevel = 1;
-	const maxLevel = 25;
+	const maxLevel = 30;
 	let currentLevel = 1;
 	let targetLevel = 25;
 	$: requiredExp = calcRequiredExp(currentLevel, targetLevel);
 	$: requiredCandy = calcRequiredCandy(requiredExp);
 </script>
 
-<h1>Pokémon Sleep アメ・経験値シミュレータ(25レベルまで対応)</h1>
+<h1>Pokémon Sleep アメ・経験値シミュレータ(30レベルまで対応)</h1>
 <div class="input-level">
 	<div>
 		<h2>現在のレベル</h2>
