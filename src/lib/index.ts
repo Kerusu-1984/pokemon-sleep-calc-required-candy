@@ -4,11 +4,21 @@ const nextExps = [
 	515, 537, 558, 579, 600, 622, 643, 665, 686, 708
 ];
 
-export const calcRequiredExp = (currentLevel: number, targetLevel: number): number => {
-	let requiredExp: number = 0;
-	for (let i = currentLevel; i < targetLevel; i++) {
-		requiredExp += nextExps[i];
-	}
+export type ExpTable = '600' | '900';
+
+export const calcRequiredExp = (
+	currentLevel: number,
+	targetLevel: number,
+	ExpTable: ExpTable
+): number => {
+	const requiredExp = nextExps.slice(currentLevel, targetLevel).reduce((acc, cur) => {
+		if (ExpTable === '600') {
+			return acc + cur;
+		} else if (ExpTable === '900') {
+			return acc + Math.ceil(cur * 1.5);
+		}
+		return acc;
+	}, 0);
 	return requiredExp;
 };
 
