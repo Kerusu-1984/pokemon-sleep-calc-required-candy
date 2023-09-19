@@ -20,7 +20,11 @@
 		{requiredExp.toLocaleString()}
 	</div>
 	<div class="text-4xl mt-4">
-		<img src="/favicon.png" alt="アメ" class="w-8 h-8 inline-block" />
+		<img
+			src="https://github.com/Kerusu-1984/pokemon-sleep-calc-required-candy/blob/main/static/favicon.png?raw=true"
+			alt="アメ"
+			class="w-8 h-8 inline-block"
+		/>
 		{requiredCandy} 個
 	</div>
 </div>
