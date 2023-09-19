@@ -8,7 +8,6 @@
 	$: requiredCandy = calcRequiredCandy(requiredExp);
 </script>
 
-<h1>Pokémon Sleep アメ・経験値シミュレータ(30レベルまで対応)</h1>
 <div class="input-level">
 	<div>
 		<h2>現在のレベル</h2>
