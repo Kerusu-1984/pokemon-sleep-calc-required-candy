@@ -9,7 +9,7 @@
 	<div class="text-center">{title}</div>
 	<div class="flex my-4 justify-center">
 		<button
-			class="btn btn-outline btn-sm md:btn-md"
+			class="btn btn-sm md:btn-md"
 			on:click={() => {
 				if (value > MIN_LEVEL) value -= 1;
 			}}
@@ -19,12 +19,12 @@
 			</svg>
 		</button>
 		{#if title === '目標のレベル'}
-			<p class="mx-4 md:mx-8 md:text-lg my-auto text-blue-500">{value}</p>
+			<p class="mx-4 md:mx-8 md:text-lg my-auto w-6 md:w-8 text-center text-blue-500">{value}</p>
 		{:else}
-			<p class="mx-4 md:mx-8 md:text-lg my-auto">{value}</p>
+			<p class="mx-4 md:mx-8 md:text-lg my-auto w-6 md:w-8 text-center">{value}</p>
 		{/if}
 		<button
-			class="btn btn-outline btn-sm md:btn-md"
+			class="btn btn-sm md:btn-md"
 			on:click={() => {
 				if (value < MAX_LEVEL) value += 1;
 			}}

@@ -36,12 +36,7 @@
 </div>
 
 <div class="text-center">
-	<div>
-		<span class="text-sm mr-4 text-gray-500">目標のレベルまであと</span>
-		<span class="text-xs text-green-500">EXP</span>
-		{requiredExp.toLocaleString()}
-	</div>
-	<div class="text-4xl mt-4">
+	<div class="text-4xl mt-8">
 		<img
 			src="https://github.com/Kerusu-1984/pokemon-sleep-calc-required-candy/blob/main/static/favicon.png?raw=true"
 			alt="アメ"
@@ -49,8 +44,12 @@
 		/>
 		{requiredCandy} 個
 	</div>
+	<div>
+		<span class="text-sm mr-4 text-gray-500">目標のレベルまであと</span>
+		<span class="text-xs text-green-500">EXP</span>
+		{requiredExp.toLocaleString()}
+	</div>
 </div>
-
 <div class="divider" />
 
 <div class="text-gray-400 px-4">
