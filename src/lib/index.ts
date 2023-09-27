@@ -22,7 +22,6 @@ export const calcRequiredExp = (
 	return requiredExp;
 };
 
-export const calcRequiredCandy = (exp: number): number => {
-	const candyExp = 25;
+export const calcRequiredCandy = (exp: number, candyExp: number): number => {
 	return Math.ceil(exp / candyExp);
 };
