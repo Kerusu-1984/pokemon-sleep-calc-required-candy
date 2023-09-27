@@ -11,7 +11,7 @@
 	$: requiredCandy = calcRequiredCandy(requiredExp, candyExp);
 </script>
 
-<div class="flex max-w-md mx-auto justify-between">
+<div class="flex max-w-lg mx-auto justify-around">
 	<LevelInput title="現在のレベル" bind:value={currentLevel} />
 	<LevelInput title="目標のレベル" bind:value={targetLevel} />
 </div>
