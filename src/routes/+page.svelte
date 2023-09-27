@@ -64,9 +64,10 @@
 		/>
 	</div>
 </div>
+<div class="divider" />
 
 <div class="text-center">
-	<div class="text-4xl mt-10">
+	<div class="text-4xl mt-2">
 		<img
 			src="https://github.com/Kerusu-1984/pokemon-sleep-calc-required-candy/blob/main/static/favicon.png?raw=true"
 			alt="アメ"
@@ -80,9 +81,8 @@
 		{requiredExp.toLocaleString()}
 	</div>
 </div>
-<div class="divider" />
 
-<div class="text-gray-400 px-4">
+<div class="text-gray-400 px-4 mt-10">
 	<ul class="list-disc">
 		<li>このシミュレータは非公式のものです。</li>
 	</ul>
