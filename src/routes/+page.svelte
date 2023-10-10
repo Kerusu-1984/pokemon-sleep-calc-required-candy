@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { calcRequiredExp, calcRequiredCandy, type ExpTable } from '$lib/index';
 	import LevelInput from './LevelInput.svelte';
-	const minLevel = 1;
-	const maxLevel = 30;
-	let currentLevel = 1;
+	let currentLevel = 10;
 	let targetLevel = 25;
 	let expTable: ExpTable = '600';
 	let candyExp = 25;

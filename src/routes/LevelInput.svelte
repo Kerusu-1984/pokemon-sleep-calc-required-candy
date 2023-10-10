@@ -1,5 +1,5 @@
 <script lang="ts">
-	const MAX_LEVEL = 30;
+	const MAX_LEVEL = 50;
 	const MIN_LEVEL = 1;
 	export let value: number;
 	export let title: string;
