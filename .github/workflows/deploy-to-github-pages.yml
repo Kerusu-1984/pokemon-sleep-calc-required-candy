@@ -25,10 +25,21 @@ jobs:
       - name: build static resources
         run: npm run build
 
-      # GitHub Pagesにデプロイする
-      - name: deploy to github pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GH_API_TOKEN }}
-          # アプリ直下のbuildディレクトリに生成されるため、指定
-          publish_dir: build
+      - name: upload to artifacts
+      - uses: actions/upload-pages-artifact@v1
+         with:
+           path: build
+
+ deploy:
+   needs: build
+   permissions:
+     pages: write
+     id-token: write
+   environment:
+     name: github-pages
+     url: ${{ steps.deployment.outputs.page_url }}
+   runs-on: ubuntu-latest
+   steps:
+     - name: Deploy to GitHub Pages
+       id: deployment
+       uses: actions/deploy-pages@v1
