@@ -44,8 +44,8 @@
 			class="join-item btn btn-sm"
 			type="radio"
 			name="options"
-			aria-label="▲"
-			on:change={() => (candyBaseExp = 30)}
+			aria-label="▼"
+			on:change={() => (candyBaseExp = 21)}
 		/>
 		<input
 			class="join-item btn btn-sm"
@@ -56,12 +56,12 @@
 			on:change={() => (candyBaseExp = 25)}
 		/>
 		<input
-			class="join-item btn btn-sm"
-			type="radio"
-			name="options"
-			aria-label="▼"
-			on:change={() => (candyBaseExp = 21)}
-		/>
+		class="join-item btn btn-sm"
+		type="radio"
+		name="options"
+		aria-label="▲"
+		on:change={() => (candyBaseExp = 30)}
+	/>
 	</div>
 </div>
 
