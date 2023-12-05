@@ -4,7 +4,9 @@
 	let currentLevel = 10;
 	let targetLevel = 25;
 	let expTable: ExpTable = '600';
-	let candyExp = 25;
+	let candyBaseExp = 25;
+	let isBoosted = false;
+	$: candyExp = isBoosted ? candyBaseExp * 2 : candyBaseExp;
 	$: requiredExp = calcRequiredExp(currentLevel, targetLevel, expTable);
 	$: requiredCandy = calcRequiredCandy(requiredExp, candyExp);
 </script>
@@ -43,7 +45,7 @@
 			type="radio"
 			name="options"
 			aria-label="▲"
-			on:change={() => (candyExp = 30)}
+			on:change={() => (candyBaseExp = 30)}
 		/>
 		<input
 			class="join-item btn btn-sm"
@@ -51,14 +53,35 @@
 			name="options"
 			aria-label="-"
 			checked
-			on:change={() => (candyExp = 25)}
+			on:change={() => (candyBaseExp = 25)}
 		/>
 		<input
 			class="join-item btn btn-sm"
 			type="radio"
 			name="options"
 			aria-label="▼"
-			on:change={() => (candyExp = 21)}
+			on:change={() => (candyBaseExp = 21)}
+		/>
+	</div>
+</div>
+
+<div class="max-w-sm my-4 flex mx-auto justify-between content-center">
+	<div class="h-fit my-auto">アメブースト※</div>
+	<div class="join">
+		<input
+			class="join-item btn btn-sm"
+			type="radio"
+			name="boost"
+			aria-label="OFF"
+			checked
+			on:change={() => (isBoosted = false)}
+		/>
+		<input
+			class="join-item btn btn-sm"
+			type="radio"
+			name="boost"
+			aria-label="ON"
+			on:change={() => (isBoosted = true)}
 		/>
 	</div>
 </div>
@@ -83,5 +106,8 @@
 <div class="text-gray-400 px-4 mt-10">
 	<ul class="list-disc">
 		<li>このシミュレータは非公式のものです。</li>
+		<li>
+			アメブーストは2023年12月18日~12月25日に実装される予定の機能です。シミュレーションと実際の機能が異なる可能性があります。
+		</li>
 	</ul>
 </div>
