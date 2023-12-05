@@ -5,6 +5,8 @@ const nextExps = [
 	893, 910, 928, 945, 963, 980, 997, 1015, 1032, 1049, 1066
 ];
 
+const baseExp = 25;
+
 export type ExpTable = '600' | '900';
 
 export const calcRequiredExp = (
@@ -26,3 +28,8 @@ export const calcRequiredExp = (
 export const calcRequiredCandy = (exp: number, candyExp: number): number => {
 	return Math.ceil(exp / candyExp);
 };
+
+export const calcCandyExp = (nature: number, isBoosted = false): number => {
+	const boost = isBoosted ? 2 : 1;
+	return Math.round(baseExp * nature * boost);
+}

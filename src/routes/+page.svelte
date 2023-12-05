@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { calcRequiredExp, calcRequiredCandy, type ExpTable } from '$lib/index';
+	import { calcRequiredExp, calcRequiredCandy,calcCandyExp, type ExpTable } from '$lib/index';
 	import LevelInput from './LevelInput.svelte';
 	let currentLevel = 10;
 	let targetLevel = 25;
 	let expTable: ExpTable = '600';
-	let candyBaseExp = 25;
+	let natureMagnification = 1;
 	let isBoosted = false;
-	$: candyExp = isBoosted ? candyBaseExp * 2 : candyBaseExp;
+	$: candyExp = calcCandyExp(natureMagnification,isBoosted);
 	$: requiredExp = calcRequiredExp(currentLevel, targetLevel, expTable);
 	$: requiredCandy = calcRequiredCandy(requiredExp, candyExp);
 </script>
@@ -45,7 +45,7 @@
 			type="radio"
 			name="options"
 			aria-label="▼"
-			on:change={() => (candyBaseExp = 21)}
+			on:change={() => (natureMagnification=0.82)}
 		/>
 		<input
 			class="join-item btn btn-sm"
@@ -53,14 +53,14 @@
 			name="options"
 			aria-label="-"
 			checked
-			on:change={() => (candyBaseExp = 25)}
+			on:change={() => (natureMagnification=1)}
 		/>
 		<input
 		class="join-item btn btn-sm"
 		type="radio"
 		name="options"
 		aria-label="▲"
-		on:change={() => (candyBaseExp = 30)}
+		on:change={() => (natureMagnification=1.18)}
 	/>
 	</div>
 </div>
