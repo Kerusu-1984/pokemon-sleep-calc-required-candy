@@ -67,23 +67,7 @@
 
 <div class="max-w-sm my-4 flex mx-auto justify-between content-center">
 	<div class="h-fit my-auto">アメブースト※</div>
-	<div class="join">
-		<input
-			class="join-item btn btn-sm"
-			type="radio"
-			name="boost"
-			aria-label="OFF"
-			checked
-			on:change={() => (isBoosted = false)}
-		/>
-		<input
-			class="join-item btn btn-sm"
-			type="radio"
-			name="boost"
-			aria-label="ON"
-			on:change={() => (isBoosted = true)}
-		/>
-	</div>
+	<input type="checkbox" class="toggle toggle-primary" bind:checked={isBoosted} on:click={()=>{isBoosted=!isBoosted}} />
 </div>
 <div class="divider" />
 
