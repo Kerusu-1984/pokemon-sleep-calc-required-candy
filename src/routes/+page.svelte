@@ -66,9 +66,21 @@
 </div>
 
 <div class="max-w-sm my-4 flex mx-auto justify-between content-center">
-	<div class="h-fit my-auto">アメブースト※</div>
+	<div class="h-fit my-auto">アメブースト
+		<label class="btn btn-circle btn-xs btn-outline" for="candy_boost_modal">?</label>
+	</div>
 	<input type="checkbox" class="toggle toggle-primary" bind:checked={isBoosted} on:click={()=>{isBoosted=!isBoosted}} />
 </div>
+
+<input type="checkbox" id="candy_boost_modal" class="modal-toggle" />
+<div class="modal" role="dialog">
+  <div class="modal-box">
+    <!-- <h3 class="font-bold text-lg bg-primary">アメブーストについて</h3> -->
+    <p class="py-4">アメブーストは2023年12月18日~12月25日に実装される予定の機能です。シミュレーションと実際の機能が異なる可能性があります。</p>
+
+  </div>
+</div>
+
 <div class="divider" />
 
 <div class="text-center">
@@ -90,8 +102,5 @@
 <div class="text-gray-400 px-4 mt-10">
 	<ul class="list-disc">
 		<li>このシミュレータは非公式のものです。</li>
-		<li>
-			アメブーストは2023年12月18日~12月25日に実装される予定の機能です。シミュレーションと実際の機能が異なる可能性があります。
-		</li>
 	</ul>
 </div>
