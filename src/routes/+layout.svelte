@@ -2,7 +2,7 @@
 	import '../app.css';
 </script>
 
-<div data-theme="emerald">
+<div data-theme="emerald" class="h-full">
 	<div class="navbar bg-base-200">
 		<div class="text-xl">アメ何個いる？(ポケモンスリープ アメ・経験値シミュレータ)</div>
 	</div>
