@@ -67,7 +67,7 @@
 
 <div class="max-w-sm my-4 flex mx-auto justify-between content-center">
 	<div class="h-fit my-auto">アメブースト
-		<label class="btn btn-circle btn-xs btn-outline" for="candy_boost_modal">?</label>
+		<label class="btn btn-circle btn-xs" for="candy_boost_modal">?</label>
 	</div>
 	<input type="checkbox" class="toggle toggle-primary" bind:checked={isBoosted} on:click={()=>{isBoosted=!isBoosted}} />
 </div>
