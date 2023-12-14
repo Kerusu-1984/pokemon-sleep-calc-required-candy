@@ -16,6 +16,7 @@
 	<LevelInput title="目標のレベル" bind:value={targetLevel} />
 </div>
 
+<div class="mt-8">
 <div class="max-w-sm my-4 flex mx-auto justify-between content-center">
 	<div class="h-fit my-auto">経験値タイプ</div>
 	<div class="join">
@@ -79,6 +80,8 @@
   </div>
   <label class="modal-backdrop" for="candy_boost_modal">Close</label>
 </div>
+</div>
+
 
 <div class="divider" />
 

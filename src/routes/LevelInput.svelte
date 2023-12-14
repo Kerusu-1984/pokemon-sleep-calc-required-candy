@@ -34,6 +34,7 @@
 			</svg>
 		</button>
 	</div>
+	<input type="range" min={MIN_LEVEL} max={MAX_LEVEL} bind:value={value} class="range range-primary range-xs" />
 </div>
 
 <style>
