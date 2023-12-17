@@ -32,7 +32,7 @@ export const calcRequiredCandy = (exp: number, candyExp: number): number => {
 
 export const calcCandyExp = (nature: number, isBoosted: boolean = false): number => {
 	const boost = isBoosted ? 2 : 1;
-	return Math.round(baseExp * nature * boost);
+	return Math.round(baseExp * nature) * boost;
 };
 
 export const calcRequiredDreamShards = (
