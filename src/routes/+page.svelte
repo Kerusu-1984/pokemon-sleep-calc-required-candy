@@ -94,15 +94,6 @@
 		/>
 	</div>
 
-	<input type="checkbox" id="candy_boost_modal" class="modal-toggle" />
-	<div class="modal" role="dialog">
-		<div class="modal-box">
-			<p class="py-4">
-				アメブーストは2023年12月18日~12月25日に実装される予定の機能です。シミュレーションと実際の機能が異なる可能性があります。
-			</p>
-		</div>
-		<label class="modal-backdrop" for="candy_boost_modal">Close</label>
-	</div>
 </div>
 
 <div class="divider" />
