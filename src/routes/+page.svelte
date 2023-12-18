@@ -31,7 +31,27 @@
 
 <div class="mt-8">
 	<div class="max-w-sm my-4 flex mx-auto justify-between content-center">
-		<div class="h-fit my-auto">経験値タイプ</div>
+		<div class="h-fit my-auto">
+			経験値タイプ <label class="btn btn-circle btn-xs" for="exp_table_modal">?</label>
+		</div>
+
+		<input type="checkbox" id="exp_table_modal" class="modal-toggle" />
+		<div class="modal" role="dialog">
+			<div class="modal-box">
+				<div class="py-4">
+					<div class="flex">
+						<div>600:</div>
+						<div class="ml-2">通常</div>
+					</div>
+					<div class="flex">
+						<div>900:</div>
+						<div class="ml-2">ヨーギラス系統</div>
+					</div>
+				</div>
+			</div>
+			<label class="modal-backdrop" for="exp_table_modal">Close</label>
+		</div>
+
 		<div class="join">
 			<input
 				class="join-item btn btn-sm"
@@ -80,9 +100,7 @@
 	</div>
 
 	<div class="max-w-sm my-4 flex mx-auto justify-between content-center">
-		<div class="h-fit my-auto">
-			アメブースト
-		</div>
+		<div class="h-fit my-auto">アメブースト</div>
 		<input
 			type="checkbox"
 			class="toggle toggle-primary"
@@ -92,7 +110,6 @@
 			}}
 		/>
 	</div>
-
 </div>
 
 <div class="divider" />
