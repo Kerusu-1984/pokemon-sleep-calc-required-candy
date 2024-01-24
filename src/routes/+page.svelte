@@ -45,7 +45,7 @@
 					</div>
 					<div class="flex">
 						<div>900:</div>
-						<div class="ml-2">ヨーギラス系統</div>
+						<div class="ml-2">ヨーギラス系統、ミニリュウ系統</div>
 					</div>
 				</div>
 			</div>
