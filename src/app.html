@@ -10,6 +10,22 @@
 			content="ポケモンスリープ(Pokémon Sleep)でポケモンのレベルを上げる際に必要なアメの数・経験値を計算します。"
 		/>
 		<meta name="google-site-verification" content="41AEUe-t9D-yDLLj0BocNzbKkazR_yarNs3rtbRrqVM" />
+		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+		<script>
+			"use strict";
+			registServiceWorker();
+			function registServiceWorker() {
+				if ('serviceWorker' in navigator) {
+					window.addEventListener('load', function () {
+						navigator.serviceWorker.register('/serviceworker.js',{scope: '/'}).then(function (registration) {
+							console.log('ServiceWorker registration successful with scope: ', registration.scope);
+						}, function (err) {
+							console.log('ServiceWorker registration failed: ',err);
+						})
+					})
+				}
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="h-screen">
