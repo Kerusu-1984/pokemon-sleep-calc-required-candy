@@ -12,6 +12,8 @@
 	let expTable: ExpTable = '600';
 	let natureMagnification = 1;
 	let isBoosted = false;
+	let isMiniBoosted = true;
+	$: boostDreamShardsRatio = isBoosted ? (isMiniBoosted ? 4 : 6) : 1;
 	$: candyExp = calcCandyExp(natureMagnification, isBoosted);
 	$: requiredExp = calcRequiredExp(currentLevel, targetLevel, expTable);
 	$: requiredDreamShards = calcRequiredDreamShards(
@@ -19,7 +21,7 @@
 		targetLevel,
 		expTable,
 		candyExp,
-		isBoosted
+		boostDreamShardsRatio
 	);
 	$: requiredCandy = calcRequiredCandy(requiredExp, candyExp);
 </script>
@@ -100,15 +102,31 @@
 	</div>
 
 	<div class="max-w-sm my-4 flex mx-auto justify-between content-center">
-		<div class="h-fit my-auto">アメブースト</div>
-		<input
-			type="checkbox"
-			class="toggle toggle-primary"
-			bind:checked={isBoosted}
-			on:click={() => {
-				isBoosted = !isBoosted;
-			}}
-		/>
+		<div class="h-fit my-auto content-center">アメブースト</div>
+		<div class="flex">
+			{#if isBoosted}
+				<div class="text-sm my-auto mr-1">ミニ</div>
+			{:else}
+				<div class="text-sm my-auto mr-1 text-gray-300">ミニ</div>
+			{/if}
+			<input
+				type="checkbox"
+				class="checkbox my-auto mr-3 checkbox-sm checkbox-secondary"
+				disabled={!isBoosted}
+				bind:checked={isMiniBoosted}
+				on:click={() => {
+					isMiniBoosted = !isMiniBoosted;
+				}}
+			/>
+			<input
+				type="checkbox"
+				class="toggle toggle-primary"
+				bind:checked={isBoosted}
+				on:click={() => {
+					isBoosted = !isBoosted;
+				}}
+			/>
+		</div>
 	</div>
 </div>
 

@@ -40,7 +40,7 @@ export const calcRequiredDreamShards = (
 	targetLevel: number,
 	expTable: ExpTable,
 	candyExp: number,
-	isBoosted: boolean = false
+	boostRatio: number
 ): number => {
 	let dreamShardsSum = 0;
 	let currentExp = 0;
@@ -51,7 +51,7 @@ export const calcRequiredDreamShards = (
 		dreamShardsSum += dreamShards;
 		currentExp = expDiff % candyExp == 0 ? 0 : candyExp - (expDiff % candyExp);
 	}
-	return isBoosted ? dreamShardsSum * 6 : dreamShardsSum;
+	return dreamShardsSum * boostRatio;
 };
 
 export const adjustRequiredExpWithExpTable = (exp: number, expTable: ExpTable): number => {
