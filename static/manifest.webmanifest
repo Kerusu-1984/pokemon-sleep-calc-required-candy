@@ -1,0 +1,14 @@
+{
+	"name": "pokemon-sleep-calc-required-candy",
+	"short_name": "calc-candy",
+	"start_url": ".",
+	"display": "standalone",
+	"background_color": "#fff",
+	"icons": [
+		{
+			"src": "./icon.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	]
+}
