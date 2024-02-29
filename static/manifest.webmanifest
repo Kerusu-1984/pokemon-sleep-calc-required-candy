@@ -1,6 +1,6 @@
 {
 	"name": "pokemon-sleep-calc-required-candy",
-	"short_name": "calc-candy",
+	"short_name": "アメ何個いる？",
 	"start_url": ".",
 	"display": "standalone",
 	"background_color": "#fff",
