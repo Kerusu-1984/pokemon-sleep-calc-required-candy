@@ -1,5 +1,5 @@
 <script lang="ts">
-	const MAX_LEVEL = 50;
+	const MAX_LEVEL = 55;
 	const MIN_LEVEL = 1;
 	export let value: number;
 	export let title: string;
@@ -34,7 +34,13 @@
 			</svg>
 		</button>
 	</div>
-	<input type="range" min={MIN_LEVEL} max={MAX_LEVEL} bind:value={value} class="range range-primary range-xs" />
+	<input
+		type="range"
+		min={MIN_LEVEL}
+		max={MAX_LEVEL}
+		bind:value
+		class="range range-primary range-xs"
+	/>
 </div>
 
 <style>
