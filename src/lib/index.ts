@@ -13,7 +13,7 @@ const dreamShardsPerCandy = [
 
 const baseExp = 25;
 
-export type ExpTable = '600' | '900';
+export type ExpTable = '600' | '900' | '1080';
 
 export const calcRequiredExp = (
 	currentLevel: number,
@@ -57,6 +57,9 @@ export const calcRequiredDreamShards = (
 export const adjustRequiredExpWithExpTable = (exp: number, expTable: ExpTable): number => {
 	if (expTable === '900') {
 		return Math.ceil(exp * 1.5);
+	}
+	if (expTable === '1080') {
+		return Math.ceil(exp * 1.8);
 	}
 	return exp;
 };

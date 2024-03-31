@@ -49,6 +49,10 @@
 						<div>900:</div>
 						<div class="ml-2">ヨーギラス系統、ミニリュウ系統</div>
 					</div>
+					<div class="flex">
+						<div>1080:</div>
+						<div class="ml-2">ライコウ</div>
+					</div>
 				</div>
 			</div>
 			<label class="modal-backdrop" for="exp_table_modal">Close</label>
@@ -69,6 +73,13 @@
 				name="exp-table"
 				aria-label="900"
 				on:change={() => (expTable = '900')}
+			/>
+			<input
+				class="join-item btn btn-sm"
+				type="radio"
+				name="exp-table"
+				aria-label="1080"
+				on:change={() => (expTable = '1080')}
 			/>
 		</div>
 	</div>
