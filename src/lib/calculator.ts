@@ -27,7 +27,7 @@ const natureToCandyExp = {
 
 export type Nature = keyof typeof natureToCandyExp;
 
-export type Event = 'none' | 'boosted' | 'miniBoosted';
+export type CandyBoostEvent = 'none' | 'boost' | 'miniBoost';
 
 export const calcRequiredExp = (currentLevel: number, targetLevel: number, expType: ExpType) => {
 	if (currentLevel >= targetLevel) {
@@ -121,24 +121,24 @@ export const calcRequiredMiniBoostedDreamShards = (
 	return dreamShardsSum;
 };
 
-export const Calculator = (event: Event) => {
+export const Calculator = (event: CandyBoostEvent) => {
 	switch (event) {
-		case 'none':
-			return {
-				calcRequiredCandy,
-				calcRequiredDreamShards,
-				calcRequiredExp
-			};
-		case 'boosted':
+		case 'boost':
 			return {
 				calcRequiredCandy: calcRequiredBoostedCandy,
 				calcRequiredDreamShards: calcRequiredBoostedDreamShards,
 				calcRequiredExp
 			};
-		case 'miniBoosted':
+		case 'miniBoost':
 			return {
 				calcRequiredCandy: calcRequiredBoostedCandy,
 				calcRequiredDreamShards: calcRequiredMiniBoostedDreamShards,
+				calcRequiredExp
+			};
+		default:
+			return {
+				calcRequiredCandy,
+				calcRequiredDreamShards,
 				calcRequiredExp
 			};
 	}

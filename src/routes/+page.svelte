@@ -1,29 +1,30 @@
 <script lang="ts">
-	import {
-		calcRequiredExp,
-		calcRequiredCandy,
-		calcCandyExp,
-		calcRequiredDreamShards,
-		type ExpTable
-	} from '$lib/index';
+	import { type Nature, type CandyBoostEvent, Calculator, type ExpType } from '$lib/calculator';
 	import LevelInput from './LevelInput.svelte';
 	let currentLevel = 10;
 	let targetLevel = 25;
-	let expTable: ExpTable = '600';
-	let natureMagnification = 1;
+	let expType: ExpType = '600';
+	let nature: Nature = 'normal';
 	let isBoosted = false;
-	let isMiniBoosted = true;
-	$: boostDreamShardsRatio = isBoosted ? (isMiniBoosted ? 4 : 6) : 1;
-	$: candyExp = calcCandyExp(natureMagnification, isBoosted);
-	$: requiredExp = calcRequiredExp(currentLevel, targetLevel, expTable);
-	$: requiredDreamShards = calcRequiredDreamShards(
+	let isMiniBoosted = false;
+	const event = (isBoosted: boolean, isMiniBoosted: boolean): CandyBoostEvent => {
+		if (isMiniBoosted && isBoosted) {
+			return 'miniBoost';
+		}
+		if (isBoosted) {
+			return 'boost';
+		}
+		return 'none';
+	};
+	$: calculator = Calculator(event(isBoosted, isMiniBoosted));
+	$: requiredExp = calculator.calcRequiredExp(currentLevel, targetLevel, expType);
+	$: requiredDreamShards = calculator.calcRequiredDreamShards(
 		currentLevel,
 		targetLevel,
-		expTable,
-		candyExp,
-		boostDreamShardsRatio
+		nature,
+		expType
 	);
-	$: requiredCandy = calcRequiredCandy(requiredExp, candyExp);
+	$: requiredCandy = calculator.calcRequiredCandy(currentLevel, targetLevel, nature, expType);
 </script>
 
 <div class="flex max-w-lg mx-auto justify-around">
@@ -65,21 +66,21 @@
 				name="exp-table"
 				aria-label="600"
 				checked
-				on:change={() => (expTable = '600')}
+				on:change={() => (expType = '600')}
 			/>
 			<input
 				class="join-item btn btn-sm"
 				type="radio"
 				name="exp-table"
 				aria-label="900"
-				on:change={() => (expTable = '900')}
+				on:change={() => (expType = '900')}
 			/>
 			<input
 				class="join-item btn btn-sm"
 				type="radio"
 				name="exp-table"
 				aria-label="1080"
-				on:change={() => (expTable = '1080')}
+				on:change={() => (expType = '1080')}
 			/>
 		</div>
 	</div>
@@ -92,7 +93,7 @@
 				type="radio"
 				name="options"
 				aria-label="▼"
-				on:change={() => (natureMagnification = 0.82)}
+				on:change={() => (nature = 'down')}
 			/>
 			<input
 				class="join-item btn btn-sm"
@@ -100,14 +101,14 @@
 				name="options"
 				aria-label="-"
 				checked
-				on:change={() => (natureMagnification = 1)}
+				on:change={() => (nature = 'normal')}
 			/>
 			<input
 				class="join-item btn btn-sm"
 				type="radio"
 				name="options"
 				aria-label="▲"
-				on:change={() => (natureMagnification = 1.18)}
+				on:change={() => (nature = 'up')}
 			/>
 		</div>
 	</div>
