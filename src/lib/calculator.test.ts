@@ -64,7 +64,7 @@ test('dreamShards', () => {
 	expect(calcRequiredDreamShards(20, 22, 'normal', '600')).toBe(3420);
 	expect(calcRequiredDreamShards(20, 23, 'normal', '600')).toBe(5290);
 	expect(calcRequiredDreamShards(55, 56, 'normal', '600')).toBe(35972); // kerusu カメ
-	// expect(calcRequiredDreamShards(55, 60, 'normal', '600')).toBe(250992) // Twiiter情報
+	expect(calcRequiredDreamShards(55, 60, 'normal', '600')).toBe(250992) // Twiiter情報
 	expect(calcRequiredBoostedDreamShards(24, 25, 'normal', '600')).toBe(6624);
 	expect(calcRequiredMiniBoostedDreamShards(24, 25, 'normal', '600')).toBe(4416);
 });

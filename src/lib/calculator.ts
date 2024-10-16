@@ -80,7 +80,7 @@ export const calcRequiredDreamShards = (
 		const requiredExp = calcRequiredExp(level, level + 1, expType) - carry;
 		const requiredcandy = Math.ceil(requiredExp / calcCandyExp(nature));
 		dreamShardsSum += dreamShardsPerCandy[level] * requiredcandy;
-		carry = calcCandyExp(nature) * requiredcandy - calcRequiredExp(level, level + 1, expType);
+		carry = calcCandyExp(nature) * requiredcandy - requiredExp;
 	}
 	return dreamShardsSum;
 };
@@ -98,7 +98,7 @@ export const calcRequiredBoostedDreamShards = (
 		const requiredcandy = Math.ceil(requiredExp / calcBoostedCandyExp(nature));
 		dreamShardsSum += dreamShardsPerCandy[level] * requiredcandy * 6;
 		carry =
-			calcBoostedCandyExp(nature) * requiredcandy - calcRequiredExp(level, level + 1, expType);
+			calcBoostedCandyExp(nature) * requiredcandy - requiredExp;
 	}
 	return dreamShardsSum;
 };
@@ -116,7 +116,7 @@ export const calcRequiredMiniBoostedDreamShards = (
 		const requiredcandy = Math.ceil(requiredExp / calcBoostedCandyExp(nature));
 		dreamShardsSum += dreamShardsPerCandy[level] * requiredcandy * 4;
 		carry =
-			calcBoostedCandyExp(nature) * requiredcandy - calcRequiredExp(level, level + 1, expType);
+			calcBoostedCandyExp(nature) * requiredcandy - requiredExp;
 	}
 	return dreamShardsSum;
 };
