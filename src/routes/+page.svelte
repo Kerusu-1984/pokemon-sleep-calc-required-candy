@@ -52,7 +52,7 @@
 					</div>
 					<div class="flex">
 						<div>1080:</div>
-						<div class="ml-2">ライコウ、エンテイ</div>
+						<div class="ml-2">ライコウ、エンテイ、スイクン</div>
 					</div>
 				</div>
 			</div>
