@@ -96,7 +96,7 @@ export const calcRequiredBoostedDreamShards = (
 	for (let level = currentLevel; level < targetLevel; level++) {
 		const requiredExp = calcRequiredExp(level, level + 1, expType) - carry;
 		const requiredcandy = Math.ceil(requiredExp / calcBoostedCandyExp(nature));
-		dreamShardsSum += dreamShardsPerCandy[level] * requiredcandy * 6;
+		dreamShardsSum += dreamShardsPerCandy[level] * requiredcandy * 5;
 		carry =
 			calcBoostedCandyExp(nature) * requiredcandy - requiredExp;
 	}
